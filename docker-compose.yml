@@ -1,0 +1,33 @@
+version: '2'
+services:
+  script1:
+    container_name: craft1
+    image: craft1
+    command: >-
+      java -cp .:supportlibraries/External_Jars/*
+      -Ddashboard.docker.ip=192.168.40.175 -DLogin_Username=karan
+      -DProjectName='craft1' allocator/Allocator  -DRunManagerName=Regression1
+   script2:
+    container_name: craft2
+    image: craft2
+    command: >-
+      java -cp .:supportlibraries/External_Jars/*
+      -Ddashboard.docker.ip=192.168.40.175 -DLogin_Username=karan
+      -DProjectName='craft2' allocator/Allocator  -DRunManagerName=Regression2
+   
+   script3:
+    container_name: craft3
+    image: craft4
+    command: >-
+      java -cp .:supportlibraries/External_Jars/*
+      -Ddashboard.docker.ip=192.168.40.175 -DLogin_Username=karan
+      -DProjectName='craft3' allocator/Allocator   -DRunManagerName=Regression3
+
+   script4:
+    container_name: craft4
+    image: craft4
+    command: >-
+      java -cp .:supportlibraries/External_Jars/*
+      -Ddashboard.docker.ip=192.168.40.175 -DLogin_Username=karan
+      -DProjectName='craft4' allocator/Allocator -DRunManagerName=Regression4
+

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DevSPACE Health Report</title>
+
+    <!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">NFT CX Report</a>
+            </div>
+       
+
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <!-- <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="usecasedetails.html"><i class="fa fa-fw fa-bar-chart-o"></i> Sonarqube </a>
+                 
+                    </li>
+                    <li>
+                        <a href="zapreport.html"><i class="fa fa-fw fa-table"></i>Zap Report</a>
+                    </li> -->
+                    <li>
+                        <a href="accesibility.html"><i class="fa fa-fw fa-edit"></i> Accessibility</a>
+                        <a href="performance.html"><i class="fa fa-fw fa-edit"></i> Performance</a>
+                         <a href="zap.html"><i class="fa fa-fw fa-edit"></i> Security</a>
+            <!-- <a href="severity.html"><i class="fa fa-fw fa-edit"></i> Severity Description</a> -->
+                    </li>
+
+                    <!-- <li>
+                        <a href="loadrunnerreport.html"><i class="fa fa-fw fa-desktop"></i> Load Runner Report</a>
+                    </li> -->
+                    
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <small>NFTCX Health Report</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+                <!-- /.row -->
+
+                <div class="row">
+                    <!-- <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-cog fa-3x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div>SAST</div>
+                                        <div id="bugs"></div>
+                                         <div id="vulnerability"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="usecasedetails.html">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+ -->
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-empire fa-3x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div >DAST Issues</div>
+                                        <div id="high"></div>
+                                        <div id="medium"></div>
+                                        <div id="low"></div>
+                                        <div id="info"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="zap.html">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-connectdevelop fa-3x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div >Accessibility Issues</div>
+                                        <div id="critical"></div>
+                                        <div id="serious"></div>
+                                        <div id="moderate"></div>
+                                        <div id="minor"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="accesibility.html">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-fw fa-wrench fa-3x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div >Performance Issues</div>
+                                        <div id="Violated"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="performance.html">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Job TestDetails</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered">
+                                     <thead>
+                                              <tr>
+                                                <th>TestDetails</th>
+                                                <th></th>
+
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                             <!--  <tr>
+                                                <td>Project Name</td>
+                                                <td>Taxi4u</td>
+
+                                              </tr> -->
+                                              <tr>
+                                                <td>Project URL</td>
+                                                <td id="myHeader"></td>
+
+                                              </tr>
+                                              <tr>
+                                                <td>Types of Test Executed</td>
+                                                <td > DAST, Accessibility, Performance</td>
+
+                                              </tr>
+                                              <tr>
+                                                <td></td>
+                                                <td ></td>
+
+                                              </tr>
+                                            </tbody>
+                                </table>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+   <!--  <script src="js/bootstrap.min.js"></script> -->
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <!-- <script src="dash.js"></script> -->
+
+    <script type="text/javascript">
+
+
+        $.getJSON("donut.json", function(json) {
+            var hits=json.rundetails;
+            //alert(JSON.stringify(hits));
+           //alert(json.rundetails.length);
+var critical=0,serious=0,minor=0,moderate=0, temp=0,temp_serious=0,temp_min=0,temp_mod=0;
+           for(var i=0;i<json.rundetails.length;i++){
+
+//alert(json.rundetails.length)
+             critical=json.rundetails[i].critical;
+            temp=temp+critical;
+             serious=json.rundetails[i].serious;
+             temp_serious=temp_serious+serious;
+             minor=json.rundetails[i].minor;
+             temp_min=temp_min+minor;
+             moderate=json.rundetails[i].moderate;
+             temp_mod=temp_mod+moderate;
+            //var pagename=json.rundetails[i].pagename;
+
+                     document.getElementById("critical").innerHTML ="Critical :"+temp; 
+                      document.getElementById("serious").innerHTML = "Serious :"+temp_serious;
+                       document.getElementById("moderate").innerHTML = "Moderate :" +temp_mod;
+                        document.getElementById("minor").innerHTML = "Minor :" +temp_min;
+           }
+ 
+        
+/*Morris.Donut({
+  element: 'chart',
+  colors: ["#8B0000", "#FF0000", "#FFBF00","#008000"],
+  data: [
+    {label: "Critical", value: critical},
+    {label: "Serious", value: serious},
+    {label: "Moderate", value: moderate},
+    {label: "Minor", value: minor}
+  ]
+});*/
+});
+
+
+
+       $.getJSON("performance.json", function(json) { 
+     
+      var hits=json.length;
+     // alert(hits);
+      var transname, pageloadtime,totalpage_time;
+      var size=45;
+      var temp=0;
+
+        for(i=0;i<json.Transactions.length;i++)
+        {
+ // transname=json.Transactions[i].name;
+
+       totalpage_time=json.Transactions[i].ttfpUser;
+      // alert(totalpage_time)
+
+
+       if(totalpage_time>=5000)
+       {
+         temp++; 
+       
+
+       }     
+                      
+           }
+
+           
+
+            if(temp>0){
+
+               document.getElementById("Violated").innerHTML ="SLA Violated Pages:"+temp; 
+            }
+
+            else{
+
+    document.getElementById("Violated").innerHTML ="No SLA Violated Pages"; 
+
+       }
+ 
+
+});
+
+
+  $.getJSON("zap.json", function(json) {
+            var hits=json.securitydetails;
+            //alert(JSON.stringify(hits));
+           //alert(hits);
+var High,Medium,Low,info;
+           for(var i=0;i<json.securitydetails.length;i++){
+
+             High =json.securitydetails[i].High;
+             Medium=json.securitydetails[i].Medium;
+             Low=json.securitydetails[i].Low;
+             info=json.securitydetails[i].info;
+
+               
+
+                    
+           }
+
+  document.getElementById("high").innerHTML="High :"+High;
+  document.getElementById("medium").innerHTML="Medium :"+Medium;
+  document.getElementById("low").innerHTML="Low :"+Low;
+  document.getElementById("info").innerHTML="info :"+info;
+                  
+        
+/*Morris.Donut({
+  element: 'chart',
+  colors: ["#8B0000", "#FF0000", "#008000","#FFBF00"],
+  data: [
+    {label: "High", value: High},
+    {label: "Medium", value: Medium},
+    {label: "Low", value: Low},
+    {label: "info", value: info}
+  ]
+});*/
+});
+
+
+$.getJSON("url.json", function(json) {
+
+var hits=json;
+//alert(JSON.stringify(hits));
+document.getElementById("myHeader").innerHTML ="<a href=>"+json.URL+"</a>" ;
+    });
+
+
+    </script>
+
+</body>
+
+</html>

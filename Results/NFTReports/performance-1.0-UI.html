@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- @author Immanuel Thomas!
+Dated 03/18/2017
+-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NFT CX Report</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- <link rel="stylesheet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style >
+    /*    #chart{
+  height:400px;
+  padding-right: 300px;
+}
+*/
+#table
+{
+   word-wrap: break-word;
+table-layout: fixed;
+}
+
+
+    </style>
+
+</head>
+
+<div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">NFT CX Report</a>
+            </div>
+       
+
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <!-- <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="usecasedetails.html"><i class="fa fa-fw fa-bar-chart-o"></i> Sonarqube </a>
+                 
+                    </li>
+                    <li>
+                        <a href="zapreport.html"><i class="fa fa-fw fa-table"></i>Zap Report</a>
+                    </li> -->
+                    <li>
+                        <a href="accesibility.html"><i class="fa fa-fw fa-edit"></i> Accessibility</a>
+                        <a href="performance.html"><i class="fa fa-fw fa-edit"></i> Performance</a>
+                         <a href="zap.html"><i class="fa fa-fw fa-edit"></i> Security</a>
+            <!-- <a href="severity.html"><i class="fa fa-fw fa-edit"></i> Severity Description</a> -->
+                    </li>
+
+                    <!-- <li>
+                        <a href="loadrunnerreport.html"><i class="fa fa-fw fa-desktop"></i> Load Runner Report</a>
+                    </li> -->
+                    
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+
+       
+<div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           <small> Performance Report</small>
+                        </h1>
+                        <!-- <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i>Results
+                            </li>
+                        </ol> -->
+                    </div>
+                </div>
+
+                 <div class="row">
+                     <div  class="col-lg-12" >                    
+                        <div class="panel panel-primary" >
+                            <div class="panel-heading :headercolor">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Pagewise Details</h3>
+                           </div>
+                            <div class="panel-body">
+
+							<div class="row">
+
+								<div class="col-lg-6">
+								
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped">
+									<thead>
+										<tr>
+											<th>TransactionName</th>
+											<th>PageLoadTime(ms)</th>
+										</tr>
+									</thead>
+									<tbody id="time">
+									</tbody>
+								</table>
+							</div>
+								</div>
+								<div class="col-lg-6">
+								
+								
+								<div class="table-responsive">
+								<table class="table table-bordered table-hover table-striped">
+									<thead>
+										<tr>
+											<th>TransactionName</th>
+											<th>PageLoadTime(ms)</th>
+										</tr>
+									</thead>
+									<tbody id="time2">
+									
+									</tbody>
+								</table>
+							</div></div>
+								
+							</div>
+							
+						</div>                      
+                        </div>
+                                                                
+                    </div>
+                    
+                    
+                    
+                </div>
+
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading :headercolor">
+							<h3 class="panel-title">
+								<i class="fa fa-money fa-fw"></i>PageWise Performance Analysis
+							</h3>
+						</div>
+
+
+						<div class="row">
+
+							<div class="col-lg-6">
+								<div class="panel-body" id="Networktable"></div>
+							</div>
+
+
+							<div class="col-lg-6">
+								<div class="panel-body" id="Networktable2">
+								
+								</div>
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="row" id="charts" style="visibility: hidden">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3 class="panel-title">
+									<i class="fa fa-bar-chart-o fa-fw"></i> Critical SLA
+								</h3>
+							</div>
+							<div class="panel-body">
+								<div class="col-lg-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<i class="fa fa-bar-chart-o fa-fw"></i> PageLoad Time(in ms)
+											</h3>
+										</div>
+
+										<div class="panel-body">
+											<div id="chart"></div>
+										</div>
+										<div class="panel-footer">
+											<h5 class="panel-title">SLA On Par = 5 Seconds</h5>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<i class="fa fa-bar-chart-o fa-fw"></i> Response Time
+												Distribution
+											</h3>
+										</div>
+										<div class="panel-body">
+											<div id="chartprofile"></div>
+										</div>
+										<div class="panel-footer">
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												<i class="fa fa-bar-chart-o fa-fw"></i> Page Profiling
+												Components
+											</h3>
+										</div>
+										<div class="panel-body">
+											<div id="chartres"></div>
+										</div>
+										<div class="panel-footer">
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- <div class="row" id="tablerow"  style="display:none">
+          <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Recommendations</h3>
+                            </div> -->
+				<!-- <div class="panel-body">
+                                <table class="table table-bordered" id="table">
+                                     <thead>
+                                              <tr>
+                                                <th width="100%">Priority</th>
+                                                <th width="100%">Description</th>
+                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody id='Performance'>      </tbody>
+
+                                </table>                             
+                           </div> -->
+				<!-- </div>
+                    </div>
+            </div> -->
+
+
+
+
+				<!--    <div class="row" id="tablerow">
+          <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Recommendations</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered" id="table">
+                                     <thead>
+                                              <tr>
+                                                <th>Priority</th>
+                                                <th width="90%">Description</th>
+                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody id='Performance'>           </tbody>
+
+                                </table>                             
+                           </div>
+                        </div>
+                    </div>
+            </div>
+
+                  <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Page Profiling Components</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered">
+                                       <thead>
+
+                                        <tr>
+                                                <td>Images</td>
+                                                <td id="images"></td>
+                                                
+                                              </tr>
+                                             
+                                              <tr>
+                                                <td>JS</td>
+                                                 <td id="js"></td>
+                                                
+                                              </tr>
+                                              <tr>
+                                                <td>Video</td>
+                                                 <td id="video"></td>
+                                                
+                                              </tr>
+
+                                              <tr>
+                                                <td>CSS</td>
+                                                 <td id="css"></td>
+                                                
+                                              </tr>
+
+                                              <tr>
+                                                <td>Font</td>
+                                                 <td id="font"></td>
+                                                
+                                              </tr>
+                                              <tr>
+                                                <td>Html</td>
+                                                 <td id="html"></td>
+                                                
+                                              </tr>
+
+                                              <tr>
+                                                <td>Other</td>
+                                                 <td id="other"></td>
+                                                
+                                              </tr>
+
+                                              
+                                            </thead>
+                                                                                      
+
+                                </table>
+                                
+                             </div>
+                        </div>
+                    </div>
+                </div> -->
+
+			</div>
+		</div>
+</div>
+               
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+ <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+     <script src="recommendations.js"></script> 
+         <!-- <script src="log.js"></script> -->
+    <!-- <script src="performance.js"></script> -->
+      <script type="text/javascript">
+
+
+
+ 
+ $.getJSON("performance.json", function(json) { 
+      //alert("welcome")
+
+      var hits=json;
+       //alert(JSON.stringify(json.output.length));
+      var transname, pageloadtime,nwcalls,ttfbyte,totalpage_time,onloadTime,domProcessingTime,recommendations1, priority,des,dnsLookupTime,domComplete,downloadTime,initialConnection,domLoadingtoComplete,domLoadingtoLoaded,domLoadingtointeractive,dom1,dom2,dom3,domloading;
+      var size=45;
+var recom;
+
+        for(i=0;i<json.length;i++){
+
+         transname=json[i].PageName;
+        pageloadtime=json[i].DOMLoadingtoComplete;
+        nwcalls=json[i].onLoadExecuteTime;
+        ttfbyte=json[i].TimeToFirstByte;
+        totalpage_time=json[i].TotalLoadTime;
+        onloadTime=json[i].onLoadTime;
+        domProcessingTime=json[i].DOMLoadingtoLoaded;
+        dnsLookupTime=json[i].DNSLookup;
+        domComplete=json[i].DomComplete;
+        downloadTime=json[i].DownloadTime;
+        initialConnection=json[i].InitialConnection;
+        domLoadingtoComplete=json[i].DOMLoadingtoComplete;
+        domLoadingtoLoaded=json[i].DOMLoadingtoLoaded;
+        domLoadingtointeractive=json[i].DOMLoadingtoInteractive;
+        domloading=json[i].DOMLoadingtoInteractive;
+        dom1=domLoadingtoLoaded-domLoadingtointeractive;
+        dom2=domLoadingtoComplete-domLoadingtoLoaded;
+        title=json[i].PageName;
+        
+       //alert(title)
+
+
+
+
+
+ var tablerow=document.createElement('tr');
+                
+                                var tablecolum1=document.createElement('td');
+                                var tablecolum2=document.createElement('td');
+
+                                tablecolum1.innerHTML=transname;
+                                tablecolum2.innerHTML=pageloadtime;
+                               // window.alert(usecasenamedtl+":"+responsetime1);
+                                tablerow.appendChild(tablecolum1);
+                                tablerow.appendChild(tablecolum2);
+                                document.getElementById("time").appendChild(tablerow);
+
+
+var row=document.createElement('div');
+                        row.setAttribute("class","row");
+                       
+
+
+                        var gridWidth=document.createElement('div');
+                        gridWidth.setAttribute("class","col-lg-12");
+
+                        var panelRoot=document.createElement('div');
+                        panelRoot.setAttribute("class","panel panel-primary");
+
+                      var panelHeading=document.createElement('div');
+                      panelHeading.setAttribute("class","panel-heading");
+                      panelHeading.setAttribute("style","background-color :#4682B4");
+                      panelHeading.setAttribute("color","color :#FFFFFF");
+
+                     var heading3=document.createElement('h3');
+                     heading3.setAttribute("class","panel-title");
+
+                      var icon=document.createElement('i');
+                       icon.setAttribute("class","fa fa-long-arrow-right fa-fw");
+
+                     heading3.appendChild(icon);
+                     heading3.innerHTML=title+"_Performance Metrics";
+
+                    // window.alert(heading3.innerHTML)
+
+                      var panelBody=document.createElement('div');
+                     panelBody.setAttribute("class","panel-body");
+                     panelBody.setAttribute("class","table-responsive");
+
+
+
+ var table = document.createElement('table');
+                                table.setAttribute("class","table table-bordered table-hover table-striped");
+                                table.setAttribute("id","table");
+
+                                var tablebody=document.createElement('tbody');
+                                tablebody.setAttribute("id",title+"_Performance Metrics");
+
+                                var tableheader=document.createElement('thead');
+                                var tableheadrow=document.createElement('tr');
+                                  var tableheader0=document.createElement('th');
+                                  var tableheader1=document.createElement('th');                    
+                                  var tableheader2=document.createElement('th');
+                                  var tableheader3=document.createElement('th');
+                                   var tableheader4=document.createElement('th');
+                                  var tableheader5=document.createElement('th');                    
+                                  var tableheader6=document.createElement('th');
+                                  
+                                    
+                                  
+                                  tableheader0.innerHTML="TransactionName";
+                                  tableheader1.innerHTML="FullyLoadedTime";
+                                  tableheader2.innerHTML="InitialConnection";
+                                  tableheader3.innerHTML="TimetoFirstByte";
+                                  tableheader4.innerHTML="DownloadTime";
+                                  tableheader5.innerHTML="DOMContentLoaded";
+                                  tableheader6.innerHTML="DOMLoadingtoComplete";
+                                 
+                                   
+
+
+                                 
+
+                                  tableheadrow.appendChild(tableheader0);
+                                  tableheadrow.appendChild(tableheader1);
+                                  tableheadrow.appendChild(tableheader2);
+                                  tableheadrow.appendChild(tableheader3);
+                                  tableheadrow.appendChild(tableheader4);
+                                  tableheadrow.appendChild(tableheader5);
+                                  tableheadrow.appendChild(tableheader6);
+                          
+                                  tableheader.appendChild(tableheadrow);
+
+
+                                  var tablerow=document.createElement('tr');                        
+                    var tablecolum0=document.createElement('td');
+
+                    var tablecolum1=document.createElement('td');   
+                    var tablecolum2=document.createElement('td');                   
+                    var tablecolum3=document.createElement('td');
+                     var tablecolum4=document.createElement('td');
+
+                    var tablecolum5=document.createElement('td');   
+                    var tablecolum6=document.createElement('td');                   
+                    
+                     
+/*var path1="recommendations.html";
+      var link=document.createElement('a');
+     link.setAttribute("target","_blank")
+    link.setAttribute("href",path1+'?'+title);
+link.innerHTML="Click Here";
+                                                                                                
+                     tablecolum0.innerHTML=name;                                                                             
+                     tablecolum1.innerHTML=totalpage_time+"ms";
+
+                     tablecolum2.innerHTML=((pagesum1)).toFixed(2)+"MB";
+                    tablecolum3.innerHTML=nwcalls;
+                    //tablecolum1.innerHTML=json[i]["request"].header.firstLine;
+                    tablecolum4.innerHTML=ttfbyte+"ms";
+                    tablecolum5.innerHTML=totalpage_time+"ms";
+
+                     tablecolum6.innerHTML="4027"+"ms";
+                    tablecolum7.innerHTML=domProcessingTime+"ms";
+                    //tablecolum1.innerHTML=json[i]["request"].header.firstLine;
+                    tablecolum8.innerHTML=onloadTime+"ms";
+                    tablecolum9.innerHTML=0 +"ms";
+                    tablecolum10.appendChild(link);*/
+                     
+                   /*var link=document.createElement('a');
+                                  var namelink=document.createElement('a');
+                             link.setAttribute("onclick","recommendations('"+name+"')");
+                           var recomelement=document.getElementById("tablerow");
+                             recomelement.style="display:block";
+*/
+                            var namelink=document.createElement('a');
+
+                             var chartselement=document.getElementById("charts");
+                             chartselement.style="display:none";
+                             var icounter=0;
+                             var counter=0;
+                             /*link.onclick=function(){
+                               alert("sjhfg")
+                              var element = document.getElementById("tablerow");
+                              if(icounter==0){
+                               
+                                chartselement.style="display:none";
+                                element.style="display:block;";
+                                counter=0;
+                                icounter=1;
+                              }
+                              else
+                              {
+                                element.style="display:none;";
+                                icounter=0;
+
+                              }
+                             }*/
+
+                             
+                             
+                             namelink.onclick=function(){
+                              var element = document.getElementById("charts");
+                              if(counter==0){
+                                recomelement.style="display:none";
+                                element.style="display:block;";
+                                counter=1; 
+                                icounter=0;
+                              }
+                              else
+                              {
+                                element.style="display:none;";
+                                counter=0;
+
+                              }
+
+
+
+                             }
+                    /*         namelink.setAttribute("data-toggle","collapse");
+                             namelink.setAttribute("class","accordion-group")
+                             namelink.setAttribute("href","#collapse1");*/
+                             namelink.innerHTML=name;  
+                             //link.innerHTML="Recommendations";
+
+
+                      tablecolum0.innerHTML=title;                                                                         
+                     tablecolum1.innerHTML=totalpage_time+"ms";
+
+                     tablecolum2.innerHTML=initialConnection+"ms";
+                    tablecolum3.innerHTML=ttfbyte+"ms";
+                    //tablecolum1.innerHTML=json[i]["request"].header.firstLine;
+                    tablecolum4.innerHTML=downloadTime+"ms";
+                    tablecolum5.innerHTML=domLoadingtoLoaded+"ms";
+
+                     tablecolum6.innerHTML=domLoadingtoComplete+"ms";
+                    
+                   
+                    //var node=tablecolum6.innerHTML;
+                   
+                    //tablecolum6.innerHTML=latency;
+                   
+                    tablerow.appendChild(tablecolum0);
+                    tablerow.appendChild(tablecolum1);                   
+                    tablerow.appendChild(tablecolum2);
+                    tablerow.appendChild(tablecolum3).setAttribute("style", "word-break: break-All;");
+                    tablerow.appendChild(tablecolum4); 
+                    tablerow.appendChild(tablecolum5);                   
+                    tablerow.appendChild(tablecolum6);
+                   
+                    tablebody.appendChild(tablerow);       
+
+
+
+               table.appendChild(tableheader);
+               table.appendChild(tablebody);
+               panelHeading.appendChild(heading3);
+
+        panelRoot.appendChild(panelHeading);
+        panelRoot.appendChild(panelBody);
+        panelBody.appendChild(table);
+        /* panelRoot.appendChild(heading5);*/
+
+        gridWidth.appendChild(panelRoot);
+        row.appendChild(gridWidth);
+
+document.getElementById("Networktable").appendChild(row); 
+
+
+if(totalpage_time<=5000)
+                      {
+                         tablecolum1.innerHTML=totalpage_time+"<img src='greendot.png' class='img-rounded' align='right' alt='loading...'> </td>";
+                      }
+                      else if(totalpage_time>1000&&totalpage_time>=1500)
+                      {
+                         tablecolum1.innerHTML=totalpage_time+"<img src='amberdot.png' class='img-rounded'  align='right'  alt='loading...' > </td>";
+                      }
+                      else
+                      {
+                         tablecolum1.innerHTML=totalpage_time+"<img src='reddot.png' class='img-rounded' align='right'  alt='loading...' > </td>";
+                      }
+
+        
+        
+
+                                  
+         }                         
+
+
+      
+    });
+
+
+
+
+    </script>
+<!-- } -->
+
+</body>
+
+</html>

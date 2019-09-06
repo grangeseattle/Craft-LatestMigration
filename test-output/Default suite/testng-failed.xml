@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="testscripts.APIScenario">
+        <methods>
+          <include name="setUpTestRunner"/>
+          <include name="validateUserData_REST" invocation-numbers="0"/>
+          <include name="temparatureConvertion_SOAP" invocation-numbers="0"/>
+          <include name="tearDownTestSuite"/>
+          <include name="setUpTestSuite"/>
+        </methods>
+      </class> <!-- testscripts.APIScenario -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

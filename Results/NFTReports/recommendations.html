@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- @author Immanuel Thomas!
+Dated 03/18/2017
+-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NFT CX Report</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+     <!-- <link rel="stylesheet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style >
+    /*    #chart{
+  height:400px;
+  padding-right: 300px;
+}
+*/
+#table
+{
+   word-wrap: break-word;
+table-layout: fixed;
+}
+
+
+    </style>
+
+</head>
+
+<div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="accesibility.html">NFT CX Report</a>
+            </div>
+       
+
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <!-- <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="usecasedetails.html"><i class="fa fa-fw fa-bar-chart-o"></i> Sonarqube </a>
+                 
+                    </li>
+                    <li>
+                        <a href="zapreport.html"><i class="fa fa-fw fa-table"></i>Zap Report</a>
+                    </li> -->
+                    <li>
+                        <a href="accesibility.html"><i class="fa fa-fw fa-edit"></i> Accessibility</a>
+                        <a href="performance.html"><i class="fa fa-fw fa-edit"></i> Performance</a>
+                         <a href="zap.html"><i class="fa fa-fw fa-edit"></i> Security</a>
+            <!-- <a href="severity.html"><i class="fa fa-fw fa-edit"></i> Severity Description</a> -->
+                    </li>
+
+                    <!-- <li>
+                        <a href="loadrunnerreport.html"><i class="fa fa-fw fa-desktop"></i> Load Runner Report</a>
+                    </li> -->
+                    
+                    
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           <small> Performance HTML Report</small>
+                        </h1>
+                    </div>
+                </div>
+               
+                
+                
+                 <div class="row" id="tablerow">
+ <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Recommendations</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered" id="table">
+                                     <thead>
+                                              <tr>
+                                                <th>Priority</th>
+                                                <th width="90%">Description</th>
+                                                
+                                              </tr>
+                                            </thead>
+                                            <tbody id='Performance'>           </tbody>
+
+                                </table>                             
+                           </div>
+                        </div>
+                    </div>
+
+
+            </div>
+
+
+<div class="row" id="tablerow">
+ <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Page Profiling Components</h3>
+                            </div>
+                                 <div class="panel-body">                                                     
+                                    <div id="chartres"> </div>
+                                 </div>
+                                 <div class="panel-footer">
+                                    <div class="clearfix"></div>
+                                </div>     
+                            </div>                           
+                     </div>
+                   </div>
+
+
+
+
+
+
+
+
+
+                
+      </div>   
+</div>     
+
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+ <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <!-- <script src="mobile.js"></script>
+    <script src="log.js"></script> -->
+    <!-- <script src="performance.js"></script> -->
+      <script type="text/javascript">
+     
+$.ajaxSetup({
+    async: false
+});  
+
+$.getJSON("log.json", function(json) {
+
+     var hits=json.Transactionlist;
+
+     //var json1=hits.log.entries;
+     //networkcalls=hits.log.entries.length;
+    // document.getElementById("nwcalls").innerHTML=networkcalls
+    // console.log(JSON.stringify(json1));
+     // window.alert(JSON.stringify(json1));
+    // alert(JSON.stringify(json1.length));
+     var pagesize=0,url1,pagesum=0;
+        var counter=0,counter1=0,counter2=0;counter3=0,counter4=0;counter5=0,counter6=0,counter7=0;
+        var css=0, js=0,html=0,image=0,font=0;video=0;other=0;
+        var networkcalls;
+   var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
+
+for(var j=0;j<hits.length;j++) 
+{
+  //window.alert(json1[j].response.content.size);
+  
+ pagesize=hits[j].log.entries[j].response.content.size;
+
+var pagesum=(pagesum+pagesize);
+ var pagesum1=(pagesum)/(1024*1024);
+var title= hits[j].log.pages[0].title;
+
+//alert(title)
+
+  if(title==url)
+{
+// document.getElementById("pagesize").innerHTML=((pagesum1)).toFixed(2)+"MB";
+url1=hits[j].log.entries[j].request.url;
+//alert(title+":"+url)
+if(url1.includes(".css"))
+{
+    css=counter;
+    counter++;
+   
+}
+else if(url1.includes(".js"))
+{
+    
+     js=counter1;
+    counter1++;
+   // alert(js)
+}
+
+else if(url1.includes(".html"))
+{
+    
+     html=counter2;
+    counter2++;
+}
+
+else if((url1.includes(".gif"))||(url1.includes(".png"))||(url1.includes(".ico"))||(url1.includes(".jpg")))
+{
+    
+     image=counter3;
+    counter3++;
+    //alert(image)
+}
+
+else if(url1.includes(".woff2")||(url1.includes(".ttf?mlnm18")))
+{
+    
+     font=counter4;
+    counter4++;
+}
+else if((url1.includes(".mp4"))||(url1.includes(".mov"))||(url1.includes(".wmv"))||(url1.includes(".AVI"))||(url1.includes(".FLV")))
+{
+video=counter5;
+counter5++;
+}
+else
+{
+    other=counter6;
+    counter6++;
+}
+
+
+
+Morris.Donut({
+  element: 'chartres',
+  colors: ["#ee7600", "#7CFC00", "#FFA500","#00ffff"," #e75480", "#800080","#1531B2"],
+  data: [
+    {label: "Css", value: counter},
+    {label: "Font", value: counter4},
+    {label: "html", value: counter2},
+    {label: "Images", value: counter3},
+    {label: "JS", value: counter1},
+    {label: "Other", value: counter6},
+    {label: "Video", value: counter5}
+  ],
+  //formatter: function (x) { return x + "%"}
+});
+
+loadPerformance(pagesum1,networkcalls,title);
+
+}
+
+
+
+
+}
+
+});
+ 
+var url;
+/*function getParameterByName(name, url) {
+    if (!url)
+// var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+   url =  window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+   // window.alert(name  +":"+ url)
+   var name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}*/
+
+
+ function loadPerformance(pagesum1,networkcalls,title){
+  $.getJSON("performance.json", function(json) { 
+     
+      var hits=json;
+      var transname, pageloadtime,nwcalls,ttfbyte,totalpage_time,onloadTime,domProcessingTime,recommendations1, priority,des;
+      var size=45;
+
+
+url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+      for(i=0;i<json.Transactions.length;i++){
+	//alert("welcome")
+         transname=json.Transactions[i].name;
+        
+if(transname==url)
+{
+      
+
+//alert("urll  l"+url)
+        recommendations1=json.Transactions[i].recommendations;
+
+for(var k=0;k<recommendations1.length;k++){
+
+//if(transname==title){
+         
+          priority=recommendations1[k].canvPriority;
+
+          des=recommendations1[k].desc;
+          var tablerow1=document.createElement('tr');                                   
+          var tablecolum1=document.createElement('td');
+          var tablecolum2=document.createElement('td');
+
+         
+
+          if(priority.includes("high")){
+            priority="High";
+          }
+          else if(priority.includes("medium")){
+            priority="Medium";
+          }
+          else if(priority.includes("low")){
+            priority="Low";
+          }
+
+ 
+          tablecolum1.innerHTML=priority.trim();
+          tablecolum2.innerHTML=des.trim();
+
+
+          tablerow1.appendChild(tablecolum1);
+          tablerow1.appendChild(tablecolum2);
+
+
+         document.getElementById("Performance").appendChild(tablerow1); 
+
+}
+       }
+       
+      }
+
+window.alert("count"+count);
+
+ 
+
+//}
+
+
+  });
+ 
+
+}
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NFT Mobile Clinic Performance Report</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <style>
+.textcolor {
+    color: #337ab7;
+    font-size:15px;
+} 
+.headercolor
+{
+background-color: #BD892E;
+}
+</style>
+  <script src="js/dygraph-combined.js"></script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">NFT Mobile Clinic Performance Report</a>
+            </div>
+            <!-- Top Menu Items -->
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+           <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                   <li class="active">
+                        <a href="welcome.html"><i class="fa fa-fw fa-dashboard"></i>App & Phone Info</a>
+                    </li>
+                    <li class="active">
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Performance Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Performance Report <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <!-- <li>
+                        <a href="cpureport.html"><i class="fa fa-fw fa-bar-chart-o"></i>CPU UseCase Details</a>
+                    </li> -->
+                    <!--  <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> UseCase Details<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                        <a href="final.html"><i class="fa fa-fw fa-bar-chart-o"></i></a>
+                    </li></ul> -->
+                    <!-- </li>  -->
+                      <!-- <li>
+                        <a href="gpureport.html"><i class="fa fa-fw fa-bar-chart-o"></i> GPU UseCase Details</a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="memoryreport.html"><i class="fa fa-fw fa-bar-chart-o"></i> Memory UseCase Details</a>
+                    </li>
+                   
+                    <li>
+                        <a href="threadreport.html"><i class="fa fa-fw fa-bar-chart-o"></i> Thread UseCase Details</a>
+                    </li>
+                    <li>
+                        <a href="networkurl.html"><i class="fa fa-fw fa-bar-chart-o"></i> Network UseCase Details</a>
+                    </li> -->
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="securitydashboard.html"><i class="fa fa-fw fa-dashboard"></i> Security Dashboard</a>
+                    </li>
+                     <li class="active">
+                        <a href="individual.html"><i class="fa fa-fw fa-dashboard"></i> Individual Analysis</a>
+                    </li>
+                   <!--  <li>
+                        <a href="pageresponsetime.html"><i class="fa fa-fw fa-desktop"></i>Network UseCase Details</a>
+                    </li> -->
+                    <!-- <li>
+                        <a href="pageresponsetime.html"><i class="fa fa-fw fa-desktop"></i>Network UseCase Details</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+
+            <div id="mainDiv" class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                             <small>NFT Mobile Clinic Performance Report</small>
+                        </h1>
+                      <!--  <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Overall Metrics
+                            </li>
+                        </ol>  -->
+                    </div>
+                </div>
+				
+                <!-- /.row -->        
+				<div class="row">
+                     <div  class="" >                    
+                        <div class="panel panel-default" >
+                            <div class="panel-heading :headercolor " id="packagename">
+                             <!--    <h3 class="panel-title"><i class="fa fa-money fa-fw"></i>Usecase Details</h3>-->
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Usecase</th>
+                                                <th>Average Cpu(%)</th>
+                                                <th>Maximum CPU(%)</th>
+                                                <th>Average Memory(KB)</th>
+                                                <th>Maximum Memory(KB)</th>
+                                                <th>Average Threads</th>
+                                                <th>Maximum Threads</th>
+                                                <th>Total Transmitted Bytes</th>
+                                                <th>Total Received Bytes</th>
+                                               <!--  <th>Average Received Bytes</th>
+                                               <th>Maximum Received Bytes</th> -->
+                                            </tr>
+                                        </thead>
+                                         <tbody id="transactiondetails">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>                      
+                        </div>
+                                                                
+                    </div>
+                    
+   
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+
+    <script type="text/javascript">
+
+          var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+          //alert("url" +url.length);
+var params=[];
+ for (var i=0;i<url.length;i++) {
+          params[i] = url[i].split(",");
+   //      alert(params[i]);
+  }
+  var usecasenamedtl=params[0];
+  var usecasesortdtl=params[1];
+  //alert("usecasesortdtl"+usecasesortdtl);
+     $.getJSON("mobile.json", function(json) {
+         var hits=json
+  var currentbuildNumber=0;
+            var previousbuildNumber=0;
+
+            //Separating Usecase wise details
+            
+            for(var i=0;i<hits.length;i++)
+            {
+
+
+                // alert(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename);
+        
+               $('#demo').append('<li><a href= final.html?'+hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+' ><i class=fa fa-fw fa-bar-chart-o></i>'+hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+'</a></li>');
+
+
+            }
+
+
+
+var keystatus=0;   
+//var usercasesort=1
+//var key='usecasesort';
+
+var memorykeys;
+
+              for(var i=0;i<hits.length;i++)
+            {   
+                var usecaseame=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename;
+                //alert(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename);
+         //   alert(usecases[0].overallcpu.usecasename);        
+           /* var userdetails=usecases[0].overallcpu.usecasename;
+            alert(userdetails)
+                if(userdetails =='launch')
+                {*/
+                //  alert("i"+i)
+                //  var  usecases=usecases[i];
+               // alert("Kalapandevi"+usecaseame);
+                if(usecaseame==usecasenamedtl)  
+                   // alert(usecaseame==usecaseame);
+                {
+
+                  
+
+
+                     memorykeys=(Math.round(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.maxmemory)/1024);
+
+                     //Math.round((currentObje.Application.runs.rundetails.usecasedetail.usecasedetails.TotalTransfered)/1024);
+                    //alert(Math.round((hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.maxmemory)/1024));
+                    
+                    //console.log("Usecase"+i+JSON.stringify(usecases[0]))
+                    
+                    var tablerow=document.createElement('tr');
+                
+                    var tablecolum1=document.createElement('td');
+                    var tablecolum2=document.createElement('td');
+                    var tablecolum3=document.createElement('td');
+                     var tablecolum4=document.createElement('td');
+                    var tablecolum5=document.createElement('td');
+                     var tablecolum6=document.createElement('td');
+                    var tablecolum7=document.createElement('td');
+                    var tablecolum8=document.createElement('td');
+                     var tablecolum9=document.createElement('td');
+                    //var tablecolum10=document.createElement('td');
+                   // var tablecolum11=document.createElement('td');
+
+                   
+                    tablecolum1.innerHTML=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename;                        
+                    tablecolum2.innerHTML=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.averagecpu;
+                    tablecolum3.innerHTML=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.maxcpu;
+                    tablecolum4.innerHTML=Math.round((hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.averagememory)/1024)+"mb";
+                    tablecolum5.innerHTML=Math.round((hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.maxmemory)/1024)+"mb";
+                    tablecolum6.innerHTML=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.averagethread;
+                    tablecolum7.innerHTML=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.maxthread;
+                    tablecolum8.innerHTML=Math.round((hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.TotalTransfered)/1024)+"kb";
+                    tablecolum9.innerHTML=Math.round((hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.TotalReceived)/1024)+"kb";
+                    //tablecolum10.innerHTML=usecases[i].usecasedetails.TotalReceived;
+                    //tablecolum11.innerHTML=usecases[i].usecasedetails.TotalReceived;
+                        var keys = [];
+                    for(var k in memorykeys) 
+                    {
+                   /* keys.push(k);   
+                //  alert(keys)
+                        }                       
+                        if((keys==null)||(keys==''))
+                        {
+                       tablecolum4.innerHTML=0;
+                        tablecolum5.innerHTML=0;
+                        
+                        }       
+                        else
+                        {
+                    keystatus++;            
+//alert(keystatus)          
+                         
+                   // alert(usecases[0].overallmemory.averagememory)
+                        }*/
+                    }
+                    
+                   tablerow.appendChild(tablecolum1);
+                    tablerow.appendChild(tablecolum2);
+                    tablerow.appendChild(tablecolum3);
+                    tablerow.appendChild(tablecolum4);
+                    tablerow.appendChild(tablecolum5);
+                     tablerow.appendChild(tablecolum6);
+                    tablerow.appendChild(tablecolum7);
+                    tablerow.appendChild(tablecolum8);
+                     tablerow.appendChild(tablecolum9);
+                    //tablerow.appendChild(tablecolum10);
+                    //tablerow.appendChild(tablecolum11);
+               document.getElementById("transactiondetails").appendChild(tablerow);
+       //    }
+        }
+
+            }
+            var graph_status=0;
+                    
+            
+                    for(var i=0;i<hits.length;i++)
+                    {
+                       var usecaseame=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename;
+                      // alert(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename);
+         //   alert(usecases[0].overallcpu.usecasename);        
+           /* var userdetails=usecases[0].overallcpu.usecasename;
+            alert(userdetails)
+                if(userdetails =='launch')
+                {*/
+                //  alert("i"+i)
+                //  var  usecases=usecases[i];
+               // alert("Kalapandevi"+usecaseame);
+             
+                if(usecaseame==usecasenamedtl)                     
+                {  
+                    
+                    //var usecases=usecases[i];
+                    graph_status=(Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.memorydetails).length);
+                    //alert("graph status"+graph_status);
+                        var row=document.createElement('div');
+                        row.setAttribute("class","row");
+
+                        var gridWidth=document.createElement('div');
+                        gridWidth.setAttribute("class","col-lg-12");
+
+                        var panelRoot=document.createElement('div');
+                        panelRoot.setAttribute("class","panel panel-default");
+
+                        var panelHeading=document.createElement('div');
+                        panelHeading.setAttribute("class","panel-heading");
+
+                        var heading3=document.createElement('h3');
+                        heading3.setAttribute("class","panel-title");
+
+                        var icon=document.createElement('i');
+                        icon.setAttribute("class","fa fa-long-arrow-right fa-fw");
+
+                        heading3.appendChild(icon);
+                        heading3.innerHTML=usecasenamedtl+"_CPU";
+
+
+
+                        var panelBody=document.createElement('div');
+                        panelBody.setAttribute("class","panel-body");
+
+                        var chart=document.createElement('div');
+                        
+                        if(graph_status>0)
+                        {
+                        chart.setAttribute("id",hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename);
+                        }
+                        else
+                        {                           
+                    chart.innerHTML="NO Data Available";
+                        }
+                        
+                        panelBody.appendChild(chart);
+                        panelHeading.appendChild(heading3);
+
+                        panelRoot.appendChild(panelHeading);
+                        panelRoot.appendChild(panelBody);
+
+                        gridWidth.appendChild(panelRoot);
+                        row.appendChild(gridWidth);
+                        document.getElementById("mainDiv").appendChild(row);
+                        
+                         if(graph_status>0)
+                         {
+            var dataMorrisArray=[];
+            
+                           // alert("lelellele"+usecases.length)      
+                        
+                
+                    
+                
+                      var duration=Math.round(parseInt(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.totalduration)/1000);
+                      // alert("durationmemory"+duration) 
+                var usecasename=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename;
+             var intervalCounter=0.0;
+             var interval=0.0;
+            // alert("Object.keys(usecases[0].overallmemory.memorydetails).length"+JSON.stringify(Object.keys(usecases[0].overallcpu.cpudetails).length));
+                        for(var j=0;j<Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.cpudetails).length;j++)
+                        {
+         //   window.alert("j loopp"+Object.keys(usecases[0].overallcpu.cpudetails).length);
+                            var dataMorrisObj={};
+                            //window.alert("interval"+(duration/Object.keys(usecases[i].cpudetails).length.toFixed(1)));
+  
+                        
+                       /* window.alert(interval);*/
+                      // intervalCounter+=parseFloat((Number(interval)).toFixed(1));
+                      //  interval=parseFloat(Number(duration/Object.keys(usecases[i].overallcpu.cpudetails).length).toFixed(1));
+                        intervalCounter+=parseFloat((Number(interval)).toFixed(1));
+                        interval=parseFloat(Number(duration/Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.cpudetails).length).toFixed(1));
+                        // window.alert("counter"+intervalCounter);
+                       // window.alert(intervalCounter);
+                                dataMorrisObj["y"]=parseFloat((Number(intervalCounter)).toFixed(1));
+                    dataMorrisObj["a"]=(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.cpudetails[(j+1)+"s"]);
+                    //alert(JSON.stringify(dataMorrisObj))
+                        dataMorrisArray.push(dataMorrisObj);
+                //      alert("final array"+dataMorrisArray)
+                        }
+                    //   window.alert(interval)
+                        Morris.Line({
+                                element:usecasename,
+                                 data:dataMorrisArray,
+                                  xkey: 'y',
+                                 ykeys: ['a'],
+                                    labels: ['Series A'],
+                                parseTime: false,
+                            xLabelAngle:45
+                            });
+dataMorrisArray=[];
+                   
+
+
+                      var row=document.createElement('div');
+                        row.setAttribute("class","row");
+
+                        var gridWidth=document.createElement('div');
+                        gridWidth.setAttribute("class","col-lg-12");
+
+                        var panelRoot=document.createElement('div');
+                        panelRoot.setAttribute("class","panel panel-default");
+
+                        var panelHeading=document.createElement('div');
+                        panelHeading.setAttribute("class","panel-heading");
+
+                        var heading3=document.createElement('h3');
+                        heading3.setAttribute("class","panel-title");
+
+                        var icon=document.createElement('i');
+                        icon.setAttribute("class","fa fa-long-arrow-right fa-fw");
+
+                        heading3.appendChild(icon);
+                        heading3.innerHTML=usecasenamedtl+"_Memory";
+                        //alert("heading3"+usecasenamedtl+"_Memory");
+
+
+                        var panelBody=document.createElement('div');
+                        panelBody.setAttribute("class","panel-body");
+                        var chart=document.createElement('div');
+
+                        if(graph_status>0)
+                        {
+
+                        
+                        chart.setAttribute("id",hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+"_Memory");
+                        //alert("Usecase:" +hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename);
+                    }
+                    else
+                    {
+                   //alert("check");
+                    chart.innerHTML="NO Data Available";
+                    }
+                        panelBody.appendChild(chart);
+                        panelHeading.appendChild(heading3);
+
+                        panelRoot.appendChild(panelHeading);
+                        panelRoot.appendChild(panelBody);
+
+                        gridWidth.appendChild(panelRoot);
+                        row.appendChild(gridWidth);
+                        document.getElementById("mainDiv").appendChild(row);
+                         }
+                     if(graph_status>0){    
+            var dataMorrisArray=[];
+                                  
+                   
+                    
+                      var duration=Math.round(parseInt(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.totalduration)/1000);
+                        //alert("duration"+duration) 
+             var intervalCounter=0.0;
+             var interval=0.0;
+            
+
+                        //alert("memorydetails"+hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.memorydetails);
+                        for(var j=0;j<Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.memorydetails).length;j++)
+                        {        
+                        var dataMorrisObj={};
+                        intervalCounter+=parseFloat((Number(interval)).toFixed(1));                     
+                        interval=parseFloat(Number(duration/Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.memorydetails).length).toFixed(1));
+                                             
+                        dataMorrisObj["y"]=parseFloat((Number(intervalCounter)).toFixed(1));
+                        dataMorrisObj["a"]=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.memorydetails[(j+1)+"s"];               
+                        dataMorrisArray.push(dataMorrisObj);                        
+                        }
+                        Morris.Line({
+                                element:usecasename+"_Memory",
+                                 data:dataMorrisArray,
+                                  xkey: 'y',
+                                 ykeys: ['a'],
+                                    labels: ['Series A'],
+                                parseTime: false,
+                            xLabelAngle:45
+                            });
+dataMorrisArray=[];
+
+
+// Theread
+
+                        var row=document.createElement('div');
+                        row.setAttribute("class","row");
+
+                        var gridWidth=document.createElement('div');
+                        gridWidth.setAttribute("class","col-lg-12");
+
+                        var panelRoot=document.createElement('div');
+                        panelRoot.setAttribute("class","panel panel-default");
+
+                        var panelHeading=document.createElement('div');
+                        panelHeading.setAttribute("class","panel-heading");
+
+                        var heading3=document.createElement('h3');
+                        heading3.setAttribute("class","panel-title");
+
+                        var icon=document.createElement('i');
+                        icon.setAttribute("class","fa fa-long-arrow-right fa-fw");
+
+                        heading3.appendChild(icon);
+                        heading3.innerHTML=usecasenamedtl+"_Thread";
+
+
+                        var panelBody=document.createElement('div');
+                        panelBody.setAttribute("class","panel-body");
+
+                        var chart=document.createElement('div');
+                        
+                        if(graph_status>0)
+                        {
+
+                        chart.setAttribute("id",hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+"_Thread");
+                        }
+                        else
+                        { 
+
+                    chart.innerHTML="NO Data Available";
+                        }
+                        
+                        panelBody.appendChild(chart);
+                        panelHeading.appendChild(heading3);
+
+                        panelRoot.appendChild(panelHeading);
+                        panelRoot.appendChild(panelBody);
+
+                        gridWidth.appendChild(panelRoot);
+                        row.appendChild(gridWidth);
+                        document.getElementById("mainDiv").appendChild(row);
+                      
+                      var dataMorrisArray=[];
+
+                       var duration=Math.round(parseInt(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.totalduration)/1000);   
+                                          
+                    //var usecasename=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+"_Thread";
+                    var intervalCounter=0.0;
+                    var interval=0.0;
+                        for(var j=0;j<Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.threaddetails).length;j++)
+                        {       
+                        var dataMorrisObj={};       
+                         intervalCounter+=parseFloat((Number(interval)).toFixed(1));
+                        interval=parseFloat(Number(duration/Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.threaddetails).length).toFixed(1));  
+                        //alert("intervalthreda"+interval);                                         
+                                                        
+                    dataMorrisObj["y"]=parseFloat((Number(intervalCounter)).toFixed(1));
+                    dataMorrisObj["a"]=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.threaddetails[(j+1)+"s"];                 
+                        dataMorrisArray.push(dataMorrisObj);                
+                        }                   
+                        Morris.Line({
+                                element:usecasename+"_Thread",
+                                 data:dataMorrisArray,
+                                  xkey: 'y',
+                                 ykeys: ['a'],
+                                    labels: ['Series A'],
+                                parseTime: false,
+                            xLabelAngle:45
+                            });
+                        dataMorrisArray=[];
+
+//Network
+
+
+                        var row=document.createElement('div');
+                        row.setAttribute("class","row");
+
+                        var gridWidth=document.createElement('div');
+                        gridWidth.setAttribute("class","col-lg-12");
+
+                        var panelRoot=document.createElement('div');
+                        panelRoot.setAttribute("class","panel panel-default");
+
+                        var panelHeading=document.createElement('div');
+                        panelHeading.setAttribute("class","panel-heading");
+
+                        var heading3=document.createElement('h3');
+                        heading3.setAttribute("class","panel-title");
+
+                        var icon=document.createElement('i');
+                        icon.setAttribute("class","fa fa-long-arrow-right fa-fw");
+
+                        heading3.appendChild(icon);
+                        heading3.innerHTML=usecasenamedtl+"_NetWork";
+
+                        var panelBody=document.createElement('div');
+                        panelBody.setAttribute("class","panel-body");
+
+                        var chart=document.createElement('div');
+                        
+                        if(graph_status>0)
+                        {
+                        chart.setAttribute("id",hits[i]._source.Application.runs.rundetails.usecasedetail.usecasename+"_Network");
+                        }
+                        else
+                        {                           
+                    chart.innerHTML="NO Data Available";
+                        }
+                        
+                        panelBody.appendChild(chart);
+                        panelHeading.appendChild(heading3);
+
+                        panelRoot.appendChild(panelHeading);
+                        panelRoot.appendChild(panelBody);
+
+                        gridWidth.appendChild(panelRoot);
+                        row.appendChild(gridWidth);
+                        document.getElementById("mainDiv").appendChild(row);
+                      var dataMorrisArray=[];
+                       var duration=Math.round(parseInt(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.totalduration)/1000); 
+                        //alert("durationcheck" +duration);  
+                //var usecasename=usecases[i].overallcpu.usecasename+"_NW";
+             var intervalCounter=0.0;
+            var interval=0.0;
+                        for(var j=0;j<(Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.networkdetails).length);j++)
+                        {
+      
+                            var dataMorrisObj={};
+                    intervalCounter+=parseFloat((Number(interval)).toFixed(1));
+                    interval=parseFloat(Number(duration/Object.keys(hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.networkdetails).length).toFixed(1));
+                        
+                     
+                     
+                      dataMorrisObj["y"]=parseFloat((Number(intervalCounter)).toFixed(1));
+                      dataMorrisObj["a"]=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.networkdetails.TotalTransfered;
+                      dataMorrisObj["b"]=hits[i]._source.Application.runs.rundetails.usecasedetail.usecasedetails.networkdetails.TotalReceived;                   
+                      dataMorrisArray.push(dataMorrisObj);
+                
+                        }
+                    
+                        Morris.Line({
+                                element:usecasename+"_Network",
+                                 data:dataMorrisArray,
+                                  xkey: 'y',
+                                 ykeys: ['a','b'],
+                                    labels: ['TransmittedBytes','Received Bytes'],
+                                parseTime: false,
+                            xLabelAngle:45
+                            });
+dataMorrisArray=[];
+                }
+            }
+          }
+
+                    }); 
+
+    </script>
+
+</body>
+
+</html>
+				

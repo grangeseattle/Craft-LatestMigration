@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>DevSPACE Report</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/style.css" rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<link href="css/plugins/morris.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
+	type="text/css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+#chart {
+	height: 400px;
+}
+</style>
+
+
+</head>
+
+<div >
+	<div id="page-wrapper">
+
+		<div class="container-fluid">
+
+			<!-- Page Heading -->
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">
+						<small>Zap Proxy Report</small>
+					</h1>
+					<!-- <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i>Zap Results
+                            </li>
+                        </ol> -->
+				</div>
+			</div>
+			<!-- /.row -->
+
+
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title" id="zapresultLabel">
+								<i class="fa fa-bar-chart-o fa-fw"></i>Zap Results
+							</h3>
+						</div>
+						<div class="panel-body">
+
+
+							<div class="row">
+
+								<div class="col-lg-6"  id="summaryDiv">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>TestDetails</th>
+										<th></th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SCAN URL</td>
+										<td id="myHeader"></td>
+
+									</tr>
+
+									<tr>
+										<td>Full Report</td>
+										<td id="jobname"><a href="htmlreport.html">Zap
+												Summary Report</a></td>
+
+									</tr>
+
+
+								</tbody>
+							</table></div>
+								<div class="col-lg-6" id="summaryDiv2">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>TestDetails</th>
+										<th></th>
+
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SCAN URL</td>
+										<td id="myHeader2"></td>
+
+									</tr>
+
+									<tr>
+										<td>Full Report</td>
+										<td id="jobname2"><a href="htmlreport.html">Zap
+												Summary Report</a></td>
+
+									</tr>
+
+
+								</tbody>
+							</table></div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title" id="zaplabel">
+								<i class="fa fa-bar-chart-o fa-fw"></i>ZAP Scanning Results
+							</h3>
+						</div>
+						<div class="panel-body">
+
+							<div class="row">
+
+								<div class="col-lg-6" id="alertdiv">
+
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+
+												<th id="risk">Risk Level</th>
+
+												<th id="value">Number of Alerts</th>
+
+											</tr>
+											<tr>
+												<td>High</td>
+												<td id="high"></td>
+
+											</tr>
+											<tr>
+												<td>Medium</td>
+												<td id="medium"></td>
+
+											</tr>
+											<tr>
+												<td>Low</td>
+												<td id="low"></td>
+
+											</tr>
+											<tr>
+												<td>info</td>
+												<td id="info"></td>
+
+											</tr>
+											<!-- </thead>
+                                            <tbody id="zapcompare">
+                                              
+                                             
+                                            
+                                            </tbody> -->
+									</table>
+								</div>
+								<div class="col-lg-6" id="alertdiv2">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+
+												<th id="risk2">Risk Level</th>
+
+												<th id="value2">Number of Alerts</th>
+
+											</tr>
+											<tr>
+												<td>High</td>
+												<td id="high2"></td>
+
+											</tr>
+											<tr>
+												<td>Medium</td>
+												<td id="medium2"></td>
+
+											</tr>
+											<tr>
+												<td>Low</td>
+												<td id="low2"></td>
+
+											</tr>
+											<tr>
+												<td>info</td>
+												<td id="info2"></td>
+
+											</tr>
+											<!-- </thead>
+                                            <tbody id="zapcompare">
+                                              
+                                             
+                                            
+                                            </tbody> -->
+									</table>
+								</div>
+
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i>Comparison ZAP PROXY TestDetails</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered">
+                                     <thead>
+                                              <tr>
+
+                                                <th>SEVERITY</th>
+                                                <th>Previous Run</th>
+                                                <th>Current Run</th>
+                                                <th>Deviation</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>HIGH</td>
+                                                <td id="highprevious"></td>
+                                                <td id="highcurrent"></td>
+                                                 <td id="highdeviation"></td>
+                                              </tr>
+                                              <tr>
+                                                <td>MEDIUM</td>
+                                                <td id="mediumprevious"></td>
+                                                <td id="mediumcurrent"></td>
+                                                <td id="mediumdeviation"></td>
+
+                                              </tr>
+                                               <tr>
+                                                <td>LOW</td>
+                                                <td id="lowprevious"></td>
+                                                <td id="lowcurrent"></td>
+                                                <td id="lowdeviation"></td>
+
+                                              </tr>
+                                              <tr>
+                                                <td>INFO</td>
+                                                <td id="infoprevious"></td>
+                                                <td id="infocurrent"></td>
+                                                <td id="infodeviation"></td>
+
+                                              </tr>
+
+
+                                            </tbody>
+                                </table>
+                             </div>
+                        </div>
+                    </div> -->
+		</div>
+
+
+
+
+
+	</div>
+	<!-- /.container-fluid -->
+
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="js/plugins/morris/raphael.min.js"></script>
+<script src="js/plugins/morris/morris.min.js"></script>
+
+
+<script type="text/javascript">
+	$.getJSON("environments.json",function(enviroments) {
+						if(enviroments.length==1)
+						{
+							
+							
+							$("#summaryDiv2").hide();
+							$("#alertdiv2").hide();
+							$("#summaryDiv").removeClass("col-lg-6").addClass("col-lg-12");;
+							$("#alertdiv").removeClass("col-lg-6").addClass("col-lg-12");;
+							var env1 = enviroments[0];
+								document.getElementById("zaplabel").innerHTML = "ZAP Scanning Results "
+								+ env1.split('--')[0] ;
+						document.getElementById("zapresultLabel").innerHTML = "ZAP Scanning Results "+ env1 ;
+				
+					document.getElementById("myHeader").innerHTML = "<a href="+env1.split('--')[1]+">" + env1.split('--')[1]
+							+ "</a>";
+				$("#myHeader2").hide();
+				
+				document.getElementById("jobname").innerHTML = "<a href=htmlreport_"+env1.split('--')[0]+".html> Zap Summary Report for "+env1.split('--')[0]+"</a>";
+						$.getJSON("zap_" + env1.split('--')[0] + ".json",function(json) {
+											var hits = json.securitydetails;
+											//alert(JSON.stringify(hits));
+											//alert(hits);
+											var High, Medium, Low, info;
+											for (var i = 0; i < json.securitydetails.length; i++) {
+
+												High = json.securitydetails[i].High;
+												Medium = json.securitydetails[i].Medium;
+												Low = json.securitydetails[i].Low;
+												info = json.securitydetails[i].info;
+
+											}
+											document.getElementById("high").innerHTML = High;
+											document.getElementById("medium").innerHTML = Medium;
+											document.getElementById("low").innerHTML = Low;
+											document.getElementById("info").innerHTML = info;
+
+											/*Morris.Donut({
+											 element: 'chart',
+											 colors: ["#8B0000", "#FF0000", "#008000","#FFBF00"],
+											 data: [
+											 {label: "High", value: High},
+											 {label: "Medium", value: Medium},
+											 {label: "Low", value: Low},
+											 {label: "info", value: info}
+											 ]
+											 });*/
+										})
+							
+							
+							
+						}else
+						{
+						var env1 = enviroments[0];
+						var env2 = enviroments[1];
+						
+							document.getElementById("zaplabel").innerHTML = "ZAP Scanning Results ("
+								+ env1.split('--')[0] + " Vs. " + env2.split('--')[0]+ ")";
+						document.getElementById("zapresultLabel").innerHTML = "ZAP Scanning Results ("
+							+ env1 + " Vs. " + env2 + ")";
+				
+					document.getElementById("myHeader").innerHTML = "<a href="+env1.split('--')[1]+">" + env1.split('--')[1]
+							+ "</a>";
+				document.getElementById("myHeader2").innerHTML = "<a href="+env2.split('--')[1]+">" + env2.split('--')[1]
+							+ "</a>";
+				
+				document.getElementById("jobname").innerHTML = "<a href=htmlreport_"+env1.split('--')[0]+".html> Zap Summary Report for "+env1.split('--')[0]+"</a>";
+		document.getElementById("jobname2").innerHTML = "<a href=htmlreport_"+env2.split('--')[0]+".html>Zap Summary Report for "+env2.split('--')[0]+"</a>";
+						$.getJSON("zap_" + env1.split('--')[0] + ".json",function(json) {
+											var hits = json.securitydetails;
+											//alert(JSON.stringify(hits));
+											//alert(hits);
+											var High, Medium, Low, info;
+											for (var i = 0; i < json.securitydetails.length; i++) {
+
+												High = json.securitydetails[i].High;
+												Medium = json.securitydetails[i].Medium;
+												Low = json.securitydetails[i].Low;
+												info = json.securitydetails[i].info;
+
+											}
+											document.getElementById("high").innerHTML = High;
+											document.getElementById("medium").innerHTML = Medium;
+											document.getElementById("low").innerHTML = Low;
+											document.getElementById("info").innerHTML = info;
+
+											/*Morris.Donut({
+											 element: 'chart',
+											 colors: ["#8B0000", "#FF0000", "#008000","#FFBF00"],
+											 data: [
+											 {label: "High", value: High},
+											 {label: "Medium", value: Medium},
+											 {label: "Low", value: Low},
+											 {label: "info", value: info}
+											 ]
+											 });*/
+										})
+										
+										
+										
+											$
+								.getJSON(
+										"zap_" + env2.split('--')[0] + ".json",
+										function(json) {
+											var hits = json.securitydetails;
+											//alert(JSON.stringify(hits));
+											//alert(hits);
+											var High, Medium, Low, info;
+											for (var i = 0; i < json.securitydetails.length; i++) {
+
+												High = json.securitydetails[i].High;
+												Medium = json.securitydetails[i].Medium;
+												Low = json.securitydetails[i].Low;
+												info = json.securitydetails[i].info;
+
+											}
+
+											document.getElementById("high2").innerHTML = High;
+											document.getElementById("medium2").innerHTML = Medium;
+											document.getElementById("low2").innerHTML = Low;
+											document.getElementById("info2").innerHTML = info;
+
+											/*Morris.Donut({
+											 element: 'chart',
+											 colors: ["#8B0000", "#FF0000", "#008000","#FFBF00"],
+											 data: [
+											 {label: "High", value: High},
+											 {label: "Medium", value: Medium},
+											 {label: "Low", value: Low},
+											 {label: "info", value: info}
+											 ]
+											 });*/
+										})
+						}
+					
+					
+					});
+
+	
+</script>
+
+</body>
+
+</html>

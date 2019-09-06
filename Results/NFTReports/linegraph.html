@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title:{
+        text: "Comparsion Graph"
+    },
+    axisX: {
+        title: "URLs",
+    
+    },
+    axisY: {
+        title: "Full Loading Time (in ms) ",
+        includeZero: false,
+        suffix: " ms"
+    },
+    legend:{
+        cursor: "pointer",
+        fontSize: 16,
+        itemclick: toggleDataSeries
+    },
+    toolTip:{
+        shared: true
+        
+    },
+    data: [{
+        name: "Environment 1",
+        type: "line",
+        yValueFormatString: "#0.## ms",
+        showInLegend: true,
+        dataPoints: [
+            { x:  1, y: 5678, label: "Test 1" },
+            { x:  2, y: 6289, label: "Test 2" },
+            { x:  3, y: 5700, label: "Test 3" },
+            { x:  4, y: 6897, label: "Test 4" },
+            { x:  5, y: 6100, label: "Test 5" }
+
+        ]
+    },
+    {
+        name: "Environment 2",
+        type: "line",
+        yValueFormatString: "#0 ms",
+        showInLegend: true,
+        dataPoints: [
+            { x:  1 , y:6213,  label: "Test1" },
+            { x:  2,  y: 4574, label: "Test2" },
+            { x:  3,  y: 5435, label: "Test3" },
+            { x:  4,  y: 7213, label: "Test4" },
+            { x:  5,  y: 6345, label: "Test5" }
+        ]
+    }]
+});
+chart.render();
+
+function toggleDataSeries(e){
+    if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+        e.dataSeries.visible = false;
+    }
+    else{
+        e.dataSeries.visible = true;
+    }
+    chart.render();
+}
+
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

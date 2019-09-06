@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/axe-selenium-2.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/bson-3.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/commons-collections4-4.2.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/extentreports-3.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/freemarker-2.3.23.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/groovy-2.4.12.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/groovy-json-2.4.12.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/groovy-xml-2.4.12.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/hamcrest-library-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/httpclient-4.5.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/httpcore-4.4.6.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/httpmime-4.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/imageClient.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/image-comparison-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jai-codec-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/java-client-6.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/javax.ws.rs.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jaxb-api-2.2.12.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jersey-client.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jersey-core-1.19.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/json-20151123.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/mobile-webdriver.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/mongodb-driver-3.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/mongodb-driver-core-3.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/mongo-java-driver-3.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/phantomjsdriver-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/rest-assured-3.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/selenium-server-standalone-3.4.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/tagsoup-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/testng-6.14.3.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/thumbnailator-0.4.2-all.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/xmlbeans-3.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/xmlrpc-client-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/xmlrpc-common-3.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/xsoup-0.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/CloudAnchor/latestcloudanchor copy/Craft-CA-MigrationApp/supportlibraries/External_Jars/zap-clientapi-1.6.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
